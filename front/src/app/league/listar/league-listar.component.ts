@@ -26,11 +26,15 @@ export class LeagueListarComponent implements OnInit {
 
 	constructor(private leagueService: LeagueService,
 		private route: ActivatedRoute) {
-	//	this.length = this.data.length;
 	}
 
 	public rows: Array<any> = [];
 	public columns: Array<any> = [
+		{
+			title: 'Id',
+			name: 'id',
+			sort: false
+		},
 		{
 			title: 'Nome',
 			name: 'name',
@@ -173,11 +177,11 @@ export class LeagueListarComponent implements OnInit {
 		}
 
 		this.data = this.leagueService.listarTodos();
-		//this.length = this.data.length;
+		this.length = this.data.length;
 		let filteredData = this.changeFilter(this.data, this.config);
 		let sortedData = this.changeSort(filteredData, this.config);
 		this.rows = page && config.paging ? this.changePage(page, sortedData) : sortedData;
-		//this.length = sortedData.length;
+		this.length = sortedData.length;
 	}
 
 	public onCellClick(data: any): any {

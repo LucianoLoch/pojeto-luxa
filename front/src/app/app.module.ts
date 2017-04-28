@@ -19,9 +19,9 @@ import { BidinfoModule } from './bidinfo';
 import { HttpModule } from '@angular/http';
 import { HttpUtilService } from './util';
 
-//import { PaginationModule } from 'ngx-bootstrap/ng2-bootstrap';
-//import { TabsModule } from 'ngx-bootstrap/ng2-bootstrap';
-
+import { PaginationModule } from 'ngx-bootstrap';
+import { TabsModule } from 'ngx-bootstrap';
+ 
 
 
 
@@ -34,8 +34,8 @@ import { HttpUtilService } from './util';
     TeamModule,
     BidinfoModule,
     HttpModule,
-//    PaginationModule,
-//		TabsModule  
+    PaginationModule.forRoot(),
+		TabsModule.forRoot()
   ],
   declarations: [ 
     AppComponent
